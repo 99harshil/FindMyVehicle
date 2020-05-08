@@ -33,7 +33,9 @@ public class testEmail {
     	final String password="pritthakkar12345";
     	String toAddress=(String)towdetailsVO.getRtoVO().getOwnerEmail();;
     	String subject="YOUR VEHICLE HAS BEEN TOWED!";
-    	String message="Hello "+towdetailsVO.getRtoVO().getOwnerName()+",<br><br>Your vehicle : ("+towdetailsVO.getRtoVO().getNumPlate()+") is towed,<br><br> <u><i>PLEASE COLLECT IT FROM</u></i><br><br><hr><br><table><tr><td>Location:</td><td><b>"+towdetailsVO.getImageupvo().getLocationVO().getLocation()+"</b></td></tr><tr><td>Area:</td><td><b>"+towdetailsVO.getImageupvo().getAreaVO().getAreaName()+"</b></td></tr><tr><td>Date:</td><b>"+towdetailsVO.getDate()+"</b></td></tr>";   
+    	String[] location = towdetailsVO.getImageupvo().getLocationVO().getLocation().split("-");
+    	String message="Hello "+towdetailsVO.getRtoVO().getOwnerName()+",<br><br>Your vehicle : ("+towdetailsVO.getRtoVO().getNumPlate()+") is towed,<br><br> <u><i>PLEASE COLLECT IT FROM</u></i><br><br><hr><br><table><tr><td>Location:</td><td><b>"+location[0]+"</b></td></tr><tr><td>Area:</td><td><b>"+towdetailsVO.getImageupvo().getAreaVO().getAreaName()+"</b></td></tr><tr><td>Date:</td><td><b>"+towdetailsVO.getDate()+"</b></td></tr></table><hr>  <b>Google Maps:<span style='color : blue;'><u>"+location[1]+"</u></span> ";   
+    	
     	
         // sets SMTP server properties
         Properties properties = new Properties();

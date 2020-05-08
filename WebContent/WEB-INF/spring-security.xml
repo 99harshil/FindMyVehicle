@@ -38,7 +38,7 @@
  
  	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <beans:property name="url" value="jdbc:mysql://localhost/fmvcloud"/> <!-- ?CreateDatabaseIfNotExist=True -->
+        <beans:property name="url" value="jdbc:mysql://localhost/fmvgit"/> <!-- ?CreateDatabaseIfNotExist=True -->
         <beans:property name="username" value="root"/>
         <beans:property name="password" value="password"/>
     </beans:bean>
